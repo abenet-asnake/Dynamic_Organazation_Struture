@@ -1,23 +1,18 @@
 const express=require('express');
-const routes=express.routes();
+const routes= express.Router();
+const { createDepartments, 
+        getDepartments, 
+        getDepartmentsByID,
+        editDepartmentsByID,
+        deleteDepartmentsByID} = require('../controller/departmentController');
 
-routes.post('/departments',(req,res)=>{
-    res.status(200).json({message: 'New departments'});
-});
+routes.post('/departments',createDepartments);
 
-routes.get('/departments/',(req,res)=>{
-    res.status(200).json({message: 'Get all departments'});
-}); 
+routes.get('/departments',getDepartments); 
 
-routes.get('/departments/:id',(req,res)=>{
-    res.status(200).json({message: 'Get Department by id'});
-});
+routes.get('/departments/:id',getDepartmentsByID);
 
-routes.put('/departments/:id',(req,res)=>{
-    res.status(200).json({message:'Update department by id'});
-});
+routes.put('/departments/:id',editDepartmentsByID);
 
-routes.delete('/departments/:id',(req,res)=>{
-    res.status(200).json({message:'Delete department by id'});
-});
+routes.delete('/departments/:id',deleteDepartmentsByID);
 module.exports=routes;
