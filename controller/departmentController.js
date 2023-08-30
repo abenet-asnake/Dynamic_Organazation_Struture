@@ -15,21 +15,21 @@ const getDepartments =(req,res)=>{
 //@routes GET /api/departments/:id
 //@access Public
 const getDepartmentsByID =(req,res)=>{
-    res.status(200).json({message: 'Get Department by id'});
+    res.status(200).json({message: `Get Department by ${req.params.id}`});
 }
 
 //@disc Edit department by id 
 //@routes PUT /api/departments/:id
 //@access Public
 const editDepartmentsByID =(req,res)=>{
-    res.status(200).json({message:'Update department by id'});
+    res.status(200).json({message:`Update department by ${req.params.id}`});
 };
 
 //@disc delete department by id
 //@routes DELETE /api/departments/:id
 //@access Public
 const deleteDepartmentsByID =(req,res)=>{
-    res.status(200).json({message:'Delete department by id'});
+    res.status(200).json({message:`Delete department by ${req.params.id}`});
 };
 
 module.exports = {createDepartments,
