@@ -1,4 +1,4 @@
-const asyncHandler=require(express-async-handler);
+const asyncHandler=require('express-async-handler');
 //@disc create new department 
 //@routes POST /api/departments/
 //@access Public
