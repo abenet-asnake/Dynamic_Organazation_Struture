@@ -1,4 +1,5 @@
 const asyncHandler=require('express-async-handler');
+const dataBase = require('../db/config');
 //@disc create new department 
 //@routes POST /api/departments/
 //@access Public
