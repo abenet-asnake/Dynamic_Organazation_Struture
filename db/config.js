@@ -1,10 +1,10 @@
-const {Client} = require('pg')
+const Pool = require('pg').Pool;
 
-const client = new Client({
-    host: "localhost",
+const client = new Pool({
     user: "postgres",
-    port: 5432,
     password: "love",
+    host: "localhost",
+    port: 5432,
     database: "postgres",
     
 }

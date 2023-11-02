@@ -9,8 +9,8 @@ const app = express();
 const port=process.env.PORT_NUMBER || 4006;
 
 app.use(express.json());
-app.use('/api/',routes);
-
+app.use('/api/departments',routes);
+app.use('/api/departments',routes);
 
 app.listen(port, ()=>{  
     console.log(`The Server is listening on localhost:${port}`);

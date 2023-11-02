@@ -1,18 +1,16 @@
 const express=require('express');
 const routes= express.Router();
-const { createDepartments, 
+const { createParentDepartments, 
+        createChildDepartments,
         getDepartments, 
         getDepartmentsByID,
         editDepartmentsByID,
         deleteDepartmentsByID} = require('../controller/departmentController');
 
-routes.post('/departments',createDepartments);
-
-routes.get('/departments',getDepartments); 
-
-routes.get('/departments/:id',getDepartmentsByID);
-
-routes.put('/departments/:id',editDepartmentsByID);
-
-routes.delete('/departments/:id',deleteDepartmentsByID);
+routes.post('/parent',createParentDepartments);
+routes.post('/child',createChildDepartments);
+routes.get('/',getDepartments); 
+routes.get('/:id',getDepartmentsByID);
+routes.put('/:id',editDepartmentsByID);
+routes.delete('/:id',deleteDepartmentsByID);
 module.exports=routes;
